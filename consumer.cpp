@@ -17,9 +17,6 @@
 #include <deque>
 #include "yahia_semaphore.h"
 
-// variable used when signaling
-//volatile sig_atomic_t stop=0;
-
 
 using namespace std;
 
@@ -67,11 +64,6 @@ double getAverageOfDeque(deque <double> v){
     return sum/v.size();
 }
 
-/*
-void ctrlC(int sig) {
-    stop=1;
-}
-*/
 
 //assuming commodities have ids from 1 to 11
 int getID(char c_name[]){
@@ -275,8 +267,7 @@ int main(int argc,char *argv[])
     double new_average;
 
 
-    //signal(SIGINT, ctrlC); // to exit while loop if user entered ctrl c . in order to free memory first before leaving
-    //while(!stop){
+
     while(true){
 
         //printf("\033[16;1H"); //moving print cursor to end
